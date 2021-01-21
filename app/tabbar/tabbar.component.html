@@ -1,0 +1,90 @@
+<TabBar
+  [barTintColor]="'white'"
+  [tintColor]="tintColor"
+  [ngStyle]="tabbarStyle"
+  [activeTab]="selectedIndex"
+  [unselectedTintColor]="unselectedTintColor"
+  [tabBarPosition]="'bottom'"
+  (onPress)="tabBarTabOnPress($event)"
+>
+  <TabBarItem [title]="'账号角色'" [key]="1" [badge]="heroNumber" [icon]="icon1" [selectedIcon]="icon11">
+    <ng-template #icon1>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/heroinfo.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-template #icon11>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/heroinfo-filling.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-container>
+      <app-herosinfo (emitIsLoading)="getIsLoading($event)" (emitHeroNumber)="getHeroNumber($event)" [loginUserName]="loginUserName"></app-herosinfo>
+    </ng-container>
+  </TabBarItem>
+  <TabBarItem [title]="'服务器状态'" [key]="2" [badge]="serverStatus" [icon]="icon2" [selectedIcon]="icon22">
+    <ng-template #icon2>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/server.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-template #icon22>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/server-filling.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-container>
+      <app-serveinfo (emitIsLoading)="getIsLoading($event)" (emitServerStatus)="getServerStatus($event)"></app-serveinfo>
+    </ng-container>
+  </TabBarItem>
+  <TabBarItem [title]="'角色修改'" [key]="3" [dot]="true" [icon]="icon3" [selectedIcon]="icon33">
+      <ng-template #icon3>
+        <div
+          style="width:22px;height: 22px;background: url('../../assets/image/icon/edit.png') center center / 21px 21px no-repeat;"
+        ></div>
+      </ng-template>
+      <ng-template #icon33>
+        <div
+          style="width:22px;height: 22px;background: url('../../assets/image/icon/edit-filling.png') center center / 21px 21px no-repeat;"
+        ></div>
+    </ng-template>
+    <ng-container>
+      <app-editchar (emitIsLoading)="getIsLoading($event)" [loginUserName]="loginUserName"></app-editchar>
+    </ng-container>
+  </TabBarItem>
+  <TabBarItem [title]="'英雄榜'" [key]="4" [icon]="icon4" [selectedIcon]="icon44">
+    <ng-template #icon4>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/armory.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-template #icon44>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/armory-filling.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-container>
+      <tbc-armory></tbc-armory>
+    </ng-container>
+  </TabBarItem>
+  <TabBarItem [title]="'账号资料'" [key]="5" [icon]="icon5" [selectedIcon]="icon55">
+    <ng-template #icon5>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/user.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-template #icon55>
+      <div
+        style="width:22px;height: 22px;background: url('../../assets/image/icon/user-filling.png') center center / 21px 21px no-repeat;"
+      ></div>
+    </ng-template>
+    <ng-container>
+      <tbc-accountinfo [loginUserName]="loginUserName"></tbc-accountinfo>
+    </ng-container>
+  </TabBarItem>
+</TabBar>
+  <div style="position: fixed; top:40%; width: 100%; height: 10%; display: flex; justify-content: center; align-items: center;" *ngIf="isLoading">
+    <div style="width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; background-color: #4C4C4C; border-radius: 10px;">
+        <ActivityIndicator [animating]="isLoading" [size]="'large'"></ActivityIndicator>
+    </div>
+  </div>

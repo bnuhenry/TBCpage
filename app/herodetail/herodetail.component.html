@@ -1,0 +1,29 @@
+<WingBlank [size]="'lg'">
+  <Card>
+    <CardHeader
+      [title]="getDataFromList[0]"
+      [extra]="extra"
+      [thumb]="returnRaceImg()"
+      [thumbStyle]="thumbStyle"
+    >
+      <ng-template #extra>
+        <span>{{returnClass(getDataFromList[2])}}</span>
+      </ng-template>
+    </CardHeader>
+    <CardBody>
+      <div>等级:  {{getDataFromList[3]}}</div>
+      <div>种族:  {{returnRace(getDataFromList[1])}}</div>
+      <div>职业:  {{returnClass(getDataFromList[2])}}</div>
+      <div>性别:  {{returnGender(getDataFromList[4])}}</div>
+      <div>金币:  {{returnMoney()}}</div>
+      <div>总计在线时长:  {{returnTotalTime()}}</div>
+      <div>最后下线地点:  {{returnMap()}}</div>
+      <div>上一次在线时间:  {{returnLogOutTime() | date:'YYYY-MM-dd HH:MM'}}</div>
+    </CardBody>
+    <!-- <CardFooter [content]="'footer content'" [extra]="footerExtra">
+      <ng-template #footerExtra>
+        <div>extra footer content</div>
+      </ng-template>
+    </CardFooter> -->
+  </Card>
+</WingBlank>

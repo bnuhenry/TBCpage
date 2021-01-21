@@ -1,0 +1,60 @@
+
+    <form [formGroup]="changePassForm">
+      <List [renderHeader]="renderHeader" [renderFooter]="renderFooter">
+        <InputItem
+          [placeholder]="'请输入密码'"
+          [focus]="onFocus"
+          [type]="'password'"
+          [value]="formData.password"
+          [clear]="true"
+          [content]="'旧密码'"
+          formControlName="password"
+          id="password"
+        >
+        </InputItem>
+        <InputItem
+          id="newpassword"
+          formControlName="newpassword"
+          [placeholder]="'请输入新的密码'"
+          [error]="newPassIsError"
+          [clear]="true"
+          [type]="'password'"
+          [value]="formData.newpassword"
+          (onChange)="inputChangeNewPass($event)"
+          [content]="'新密码'"
+        >
+        </InputItem>
+        <InputItem
+        id="newpassword2"
+        formControlName="newpassword2"
+        [placeholder]="'请再次输入新的密码'"
+        [type]="'password'"
+        [error]="confirmPassIsError"
+        [clear]="true"
+        (onChange)="inputChangeNewPass2($event)"
+        [value]="formData.newpassword2"
+        [content]="'确认新密码'"
+      >
+      </InputItem>
+        <!-- <ListItem [extra]="_switch">Confirm Infomation</ListItem>
+        <ListItem>
+          <Range
+            style="padding: 7px"
+            [defaultValue]="[20, 80]"
+            [min]="0"
+            [max]="100"
+            (onAfterChange)="afterChange($event)"
+          ></Range>
+        </ListItem>
+        <ListItem [extra]="_stepper">Number of Subscribers</ListItem> -->
+        <ListItem>
+          <a Button [type]="'primary'" [size]="'small'" [inline]="true" (onClick)="onSubmit()">
+            确认
+          </a>
+          <a Button style="margin-left: 2.5px;" [size]="'small'" [inline]="true" (onClick)="onReset()">
+            重置
+          </a>
+        </ListItem>
+      </List>
+    </form>
+  

@@ -1,0 +1,27 @@
+.serveinfo {
+    display: flex;
+    color:yellow;
+    width: 100%;
+    height: 70%;
+    font-size:3vmax;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(15, 15, 16,0.5);
+  }
+
+  .downloadmsg{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    font-size:2vmax;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column;
+    color:yellow;
+    background: rgba(15, 15, 16,0.5);
+  }
+
+  .downloadmsg .red{
+    color:#ffffff;
+  }

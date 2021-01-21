@@ -1,0 +1,13 @@
+<List [className]="'my-list'" [renderHeader]="renderHeader">
+</List>
+
+<List 
+[className]="'my-list'"
+ *ngFor="let item of dataAry;index as i">
+     <ListItem 
+     multipleLine 
+     [extra]="returnIndex(i)"
+     [thumb]="returnRaceImg(i)">
+       {{item[0]}}  {{item[3]}}级{{returnRace(item[1])}}{{returnClass(item[2])}}
+     </ListItem>
+ </List>

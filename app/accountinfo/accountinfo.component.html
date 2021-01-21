@@ -1,0 +1,52 @@
+
+    <List [className]="'my-list'" [renderHeader]="renderHeader">
+      <ListItem [extra]="accountJoinDate">{{loginUserName}}</ListItem>
+    </List>
+    <List [className]="'my-list'" [renderHeader]="renderHeader1">
+      <ListItem multipleLine 
+      [arrow]="'horizontal'" 
+      [thumb]="'../../assets/image/icon/password.png'"
+      (onClick)="onClickChangePass()">
+        账户安全
+        <Brief>密码修改</Brief>
+      </ListItem>
+      <tbc-changepass *ngIf="showChangePassInput" [loginUserName]="loginUserName"></tbc-changepass>
+      <ListItem 
+      multipleLine 
+      [arrow]="'horizontal'" 
+      [thumb]="'../../assets/image/icon/email.png'"
+      (onClick)="onClickChangeEmail()">
+        邮箱地址
+        <Brief>{{accountEmail}}</Brief>
+      </ListItem>
+      <tbc-changeemail *ngIf="showChangeEmailInput" [loginUserName]="loginUserName" (newEmailEmit)="getNewEmail($event)"></tbc-changeemail>
+      <ListItem
+        [thumb]="'../../assets/image/icon/lastlogin.png'"
+        multipleLine
+      >
+        上一次登录游戏时间 {{accountLast_Login}}
+        <Brief>登录IP {{accountLast_Ip}}</Brief>
+      </ListItem>
+    </List>
+    <List [className]="'my-list'" [renderHeader]="renderHeader2">
+      <ListItem
+      [thumb]="'../../assets/image/icon/credit.png'"
+      >目前积分:{{accountCredit}}
+    </ListItem>
+      <ListItem
+        [extra]="'微信支付'"
+        [arrow]="'horizontal'" 
+        [thumb]="'../../assets/image/icon/charge.png'"
+        (onClick)="onClickCreditCharge()"
+        multipleLine
+      >
+      积分充值
+        <Brief>使角色变得更强大</Brief>
+      </ListItem>
+    </List>
+    <List [className]="'my-list'" [renderHeader]="renderHeader3">
+      <ListItem multipleLine  [arrow]="'horizontal'" (onClick)="onClickLogOut()">
+        退出登录
+      </ListItem>
+    </List>
+  

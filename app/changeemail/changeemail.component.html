@@ -1,0 +1,24 @@
+
+    <form [formGroup]="changeEmailForm">
+      <List [renderHeader]="renderHeader" [renderFooter]="renderFooter">
+        <InputItem
+          [placeholder]="'请输入新的邮箱地址'"
+          [focus]="onFocus"
+          [value]="newEmail"
+          [clear]="true"
+          [content]="'新邮箱'"
+          formControlName="newEmail"
+          id="newEmail"
+        >
+        </InputItem>
+        <ListItem>
+          <a Button [type]="'primary'" [size]="'small'" [inline]="true" (onClick)="onSubmit()">
+            确认
+          </a>
+          <a Button style="margin-left: 2.5px;" [size]="'small'" [inline]="true" (onClick)="onReset()">
+            重置
+          </a>
+        </ListItem>
+      </List>
+    </form>
+  

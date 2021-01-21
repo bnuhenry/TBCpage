@@ -1,0 +1,36 @@
+<List 
+ [className]="'my-list'"
+ [renderHeader]="renderHeader(i)"
+  *ngFor="let item of dataAry;index as i">
+      <ListItem 
+      multipleLine 
+      [arrow]="'horizontal'" 
+      [thumb]="returnRaceImg(i)"
+      (onClick)="onClick(i)">
+        角色名字：{{item[0]}}  等级：{{item[3]}}
+      </ListItem>
+      <ListItem
+        [thumb]="returnClassImg(i)"
+        multipleLine
+        (onClick)="onClick(i)"
+      >
+      <Brief>{{returnRace(item[1])}}{{returnGender(item[4])}}{{returnClass(item[2])}}</Brief>
+      </ListItem>
+      <tbc-herodetail *ngIf="showDetailBoolAry[i]" [getDataFromList]="returnDataToDetail(i)"></tbc-herodetail>
+  </List>
+  <List 
+ [className]="'my-list'"
+ [renderHeader]="'账户下暂无游戏角色'"
+ *ngIf="showNoHeroList"
+  >
+      <ListItem 
+      multipleLine 
+      [wrap]="true"
+      >
+        还没创建英雄？艾泽拉斯需要你的拯救,赶紧下载游戏来创建英雄吧
+        <Brief>本服务器采用燃烧的远征版本</Brief>
+        <Brief>开放太阳井黑暗神庙，包括幻化NPC</Brief>
+        <Brief>请下载TBC2.4.3客户端，并且覆盖好登录配置文件</Brief>
+        <Brief>具体下载地址及插件请看服务器状态页</Brief>
+      </ListItem>
+  </List>

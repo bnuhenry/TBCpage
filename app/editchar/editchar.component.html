@@ -1,0 +1,4 @@
+<div class="picker">
+    <tbc-picker (emitLevelDisable)="getLevelDisable($event)" (emitMoneyDisable)="getMoneyDisable($event)" (emitCharName)="getCharName($event)" [loginUserName]="loginUserName"></tbc-picker>
+</div>
+<tbc-button [levelChangDisable]="levelChangeDisable" [addMoneyDisable]="addMoneyDisable"  [charName]="charName" [loginUserName]="loginUserName"></tbc-button>

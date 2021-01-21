@@ -1,0 +1,53 @@
+<form [formGroup]="loginForm">
+    <div class="loginform" *ngIf="!showRegForm">
+        <div class="loginformtop">账号登录</div>
+        <div class="loginformuser">
+            <label>账号:</label>
+            <input class="loginforminput" type="text" formControlName="user" placeholder="请输入账号4到14位">
+        </div>
+        <div class="loginformpass">
+            <label>密码:</label>
+            <input class="loginforminput" formControlName="pass" type="password" placeholder="请输入密码3到12位">
+        </div>
+        <div class="loginformbutton">
+            <div class="loginformsubmit">
+                <button (click)="loginsubmit()">确认</button>
+            </div>
+            <div class="loginformsubmit">
+                <button (click)="cancelLogin()">取消</button>
+            </div>
+        </div>
+        <div class="loginformmsgtext">
+            <span class="loginmsg">{{loginMsg}}</span>
+        </div>
+        <div class="loginformregtext">
+            <span (click)="goToReg()">还没注册？</span>
+        </div>
+    </div>
+    <div class="regform" *ngIf="showRegForm">
+        <div class="loginformtop">注册账号</div>
+        <div class="loginformuser">
+            <label>输入账号:</label>
+            <input class="loginforminput" type="text" formControlName="user" placeholder="请输入账号4到14位">
+        </div>
+        <div class="loginformpass">
+            <label>输入密码:</label>
+            <input class="loginforminput" formControlName="pass" type="password" placeholder="请输入密码3到12位">
+        </div>
+        <div class="loginformpass">
+            <label>确认密码:</label>
+            <input class="loginforminput" #passrepeat type="password" placeholder="请再次输入密码" (change)="checkPassConfirm(passrepeat.value)">
+        </div>
+        <div class="loginformbutton">
+            <div class="loginformsubmit">
+                <button (click)="regSubmit()">提交</button>
+            </div>
+            <div class="loginformsubmit">
+                <button (click)="backToLogin()">取消</button>
+            </div>
+        </div>
+        <div class="loginformmsgtext">
+            <span class="loginmsg">{{loginMsg}}</span>
+        </div>
+    </div>
+</form>

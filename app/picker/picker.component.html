@@ -1,0 +1,93 @@
+
+    <div Button>{{ topTitle }}</div>
+    <WhiteSpace></WhiteSpace>
+    <List className="my-list">
+      <!-- <ListItem
+        Picker
+        [data]="data"
+        [extra]="name1"
+        [arrow]="'horizontal'"
+        [mask]="true"
+        [title]="'Areas'"
+        [(ngModel)]="value1"
+        (ngModelChange)="onOk1($event)"
+        (onDismiss)="onDismiss1()"
+      >
+        Multiple & cascader
+      </ListItem>
+      <ListItem
+        Picker
+        [data]="delayData"
+        [extra]="name1"
+        [arrow]="'horizontal'"
+        [mask]="true"
+        [title]="'Areas'"
+        [(ngModel)]="value1"
+        (ngModelChange)="onOk1($event)"
+        (onDismiss)="onDismiss1()"
+      >
+        Multiple & delayData
+      </ListItem>
+      <ListItem
+        Picker
+        [extra]="name2"
+        [arrow]="'horizontal'"
+        [cascade]="false"
+        [data]="seasons"
+        [title]="'选择季节'"
+        [(ngModel)]="value2"
+        (ngModelChange)="onOk2($event)"
+      >
+        Multiple
+      </ListItem> -->
+      <ListItem
+        Picker
+        [extra]="name3"
+        [arrow]="'horizontal'"
+        [data]="selectNameAry"
+        [(ngModel)]="value3"
+        (ngModelChange)="onOk3($event)"
+      >
+      {{selectCharTitle}}
+      </ListItem>
+      <!-- <ListItem
+        Picker
+        [data]="asynData"
+        [cols]="cols"
+        [extra]="name4"
+        [arrow]="'horizontal'"
+        [(ngModel)]="value4"
+        (onPickerChange)="onPickerChange($event)"
+        (ngModelChange)="onOk4($event)"
+      >
+        Multiple & async
+      </ListItem> -->
+      <ListItem
+        Picker
+        [extra]="'等级'+charLevel"
+        [disabled]="true"
+        [mask]="true"
+        [title]="'Areas'"
+        [(ngModel)]="value1"
+        (ngModelChange)="onOk3($event)"
+      >
+        {{charName}}
+      </ListItem>
+    <!-- <ListItem></ListItem> -->
+    </List>
+
+    <WhiteSpace></WhiteSpace>
+    <!-- <List className="my-list">
+      <ListItem
+        Picker
+        [extra]="'修改'"
+        [arrow]="'horizontal'"
+        [data]="selectNameAry"
+        [(ngModel)]="value3"
+        (ngModelChange)="onOk3($event)"
+      >
+        Multiple & cascader
+      </ListItem>
+    </List> -->
+
+  
